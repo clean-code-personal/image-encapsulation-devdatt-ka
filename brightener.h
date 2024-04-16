@@ -1,11 +1,11 @@
 #pragma once
+#include <memory>
 #include "image.h"
 
 class ImageBrightener {
 private:
-	std::unique_ptr<Image> m_inputImage;
+	std::shared_ptr<Image> m_inputImage;
 public:
-	ImageBrightener(std::unique_ptr<Image> inputImage);
-	bool ValidateImage();
+	ImageBrightener(std::shared_ptr<Image> inputImage);
 	int BrightenWholeImage();
 };
